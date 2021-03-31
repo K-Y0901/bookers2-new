@@ -8,7 +8,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    @comment = BookComment.new
+    @book_comment = BookComment.new
   end
 
   def edit
@@ -39,7 +39,7 @@ class BooksController < ApplicationController
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
-    redirect_to books_url
+    redirect_to books_path
   end
 
   private
