@@ -13,11 +13,11 @@
       <%= render 'detail', book: @book %>
     </div>
 
-    <%= form_with(model: [@book, @book_comment], local: true) do |f|%>
+    <%= form_with(model: [@book, @book_comment], remote: true) do |f|%>
       <%= f.text_area :body %>
       <%= f.submit "送信", class: "btn btn-primary" %>
     <% end %>
-    <div class="comment__table">
+    <div id="comments__area">
       <%= render 'book_comments/table', book_comments: @book.book_comments%>
     </div>
   </div>
